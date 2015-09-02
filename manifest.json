@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "jxyy",
+  "short_name": "jxyy",
+  "description": "驾校预约",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+
+  "icons": {
+    "16": "assets/icon_16.png",
+    "128": "assets/icon_128.png"
+  },
+  "permissions": ["http://www.hncsjj.gov.cn/*","http://www.hncsjj.gov.cn:8085/CsZzYy/cszzyy/toYysq.action","tabs", "notifications"],
+  "content_scripts": [
+    {
+      "matches": ["http://www.hncsjj.gov.cn:8085/CsZzYy/cszzyy/toYysq.action"],
+      "js": ["zepto.min.js","main.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["bg.js"]
+  }
+}
